@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN echo "nameserver 1.1.1.1" | tee /etc/resolv.conf && \
-apk add --no-cache gcc git libc-dev make && \
+apk add --no-cache binutils gcc git libc-dev make && \
 git clone https://github.com/ibara/oksh.git /home/oksh && \
 cd /home/oksh && \
 git checkout oksh-6.5 && \
