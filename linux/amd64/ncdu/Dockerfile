@@ -10,4 +10,4 @@ export LDFLAGS="-static" && \
 ./configure && \
 make && \
 strip ./ncdu && \
-cp -p ./ncdu /root/ncdu
+mv ./ncdu /root/ncdu

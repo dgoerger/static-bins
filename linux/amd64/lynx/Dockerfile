@@ -12,4 +12,4 @@ export ac_cv_path_BZIP2=none && \
 ./configure --disable-idna --disable-nls --disable-bibp-urls --disable-dired --disable-finger --enable-ipv6 --enable-widec --with-ssl --with-zlib --without-bzlib --enable-default-colors --with-screen=ncursesw && \
 make && \
 strip ./lynx && \
-cp -p ./lynx /root/lynx
+mv ./lynx /root/lynx
