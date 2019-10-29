@@ -1,0 +1,8 @@
+flags: +static +embed_data_files
+
+package pandoc
+  ghc-options: -optc-Os -fPIC -split-sections
+  ld-options: -static -pthread
+
+program-options
+  ghc-options:
