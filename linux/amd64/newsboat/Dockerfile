@@ -10,6 +10,9 @@ export LDFLAGS="-static -lz -lnghttp2" && \
 ./config.sh && \
 sed -i 's/-L\.\/target\/release/-L\${PWD}\/target\/release/g' Makefile && \
 sed -i 's/\$(NEWSBOAT_LIBS)\ \$(LDFLAGS)/-lboat\ -lnewsboat\ -lfilter\ -lpthread\ -lrsspp\ -ldl\ -static\ -L\.\ -lcurl\ -lsqlite3\ -lcurl\ -lxml2\ -lstfl\ -ljson-c\ -lssl\ -lcrypto\ -Wl,--as-needed\ -lncursesw\ -L\/home\/newsboat-2.17.1\/target\/release\ -lz\ -lnghttp2/' Makefile && \
-make newsboat && \
+sed -i 's/\$(PODBOAT_LIBS)\ \$(LDFLAGS)/-lboat\ -lnewsboat\ -lpthread\ -ldl\ -static\ -L\.\ -lcurl\ -lsqlite3\ -lcurl\ -lxml2\ -lstfl\ -ljson-c\ -lssl\ -lcrypto\ -Wl,--as-needed\ -lncursesw\ -L\/home\/newsboat-2.17.1\/target\/release\ -lz\ -lnghttp2/' Makefile && \
+make newsboat podboat && \
 strip ./newsboat && \
-mv ./newsboat /root/newsboat
+strip ./podboat && \
+mv ./newsboat /root/newsboat && \
+mv ./podboat /root/podboat
