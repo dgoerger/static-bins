@@ -1,0 +1,23 @@
+--- ShellCheck.cabal,v	Mon Dec  2 19:47:43 2019
++++ ShellCheck.cabal	Mon Dec  2 19:49:42 2019
+@@ -43,6 +43,10 @@
+     type: git
+     location: git://github.com/koalaman/shellcheck.git
+ 
++flag static
++  Description:   Use static linking for shellcheck executable.
++  Default:       False
++
+ library
+     hs-source-dirs: src
+     if impl(ghc < 8.0)
+@@ -96,6 +100,9 @@
+     if impl(ghc < 8.0)
+       build-depends:
+         semigroups
++    if flag(static)
++      ghc-options: -optc-Os -fPIC -split-sections
++      ld-options: -static -pthread
+     build-depends:
+       aeson,
+       array,

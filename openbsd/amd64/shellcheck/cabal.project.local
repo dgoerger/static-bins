@@ -1,0 +1,8 @@
+flags: +static
+
+package ShellCheck
+  ghc-options: -optc-Os -fPIC -split-sections
+  ld-options: -static -pthread
+
+program-options
+  ghc-options:
