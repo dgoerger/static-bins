@@ -15,7 +15,7 @@ all:
 	cp ../cabal.project.local . && \
 	cabal new-build && \
 	find dist-newstyle -type f -name pandoc -exec cp -p {} ../ \; && \
-	strip -s ./pandoc
+	strip -s ../pandoc
 
 clean:
 	rm -rf pandoc pandoc-src/

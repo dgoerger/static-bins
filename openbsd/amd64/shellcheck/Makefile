@@ -18,7 +18,7 @@ all:
 	cp ../cabal.project.local . && \
 	cabal new-build && \
 	find dist-newstyle -type f -name shellcheck -exec cp -p {} ../ \; && \
-	strip -s ./shellcheck
+	strip -s ../shellcheck
 
 clean:
 	rm -rf shellcheck shellcheck-src/
