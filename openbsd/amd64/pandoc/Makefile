@@ -7,14 +7,15 @@
 all:
 	git clone https://github.com/jgm/pandoc.git pandoc-src && \
 	cd pandoc-src && \
-	git checkout 2.8 && \
+	git checkout 2.8.0.1 && \
 	patch pandoc.cabal ../disable_ghc_option_threaded.patch && \
 	export TMPDIR=/usr/local/cabal/build && \
 	cabal new-update && \
 	cabal new-clean && \
 	cp ../cabal.project.local . && \
 	cabal new-build && \
-	find dist-newstyle -type f -name pandoc -exec cp -p {} ../ \;
+	find dist-newstyle -type f -name pandoc -exec cp -p {} ../ \; && \
+	strip -s ./pandoc
 
 clean:
 	rm -rf pandoc pandoc-src/
