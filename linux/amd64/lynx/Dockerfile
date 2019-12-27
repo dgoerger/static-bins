@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN echo "nameserver 1.1.1.1" | tee /etc/resolv.conf && \
-apk add --no-cache binutils gcc libc-dev make openssl-dev ncurses-dev ncurses-static zlib-dev && \
+apk add --no-cache binutils gcc libc-dev make ncurses ncurses-dev ncurses-static openssl-dev openssl-libs-static zlib-dev zlib-static && \
 cd /home && \
 wget https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.gz && \
 tar -xzf lynx2.8.9rel.1.tar.gz && \
