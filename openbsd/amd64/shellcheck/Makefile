@@ -10,7 +10,7 @@
 all:
 	git clone https://github.com/koalaman/shellcheck.git shellcheck-src && \
 	cd shellcheck-src && \
-	git checkout v0.7.0 && \
+	git checkout v0.7.1 && \
 	cabal new-update && \
 	cabal new-clean && \
 	export TMPDIR=/usr/local/cabal/build && \
