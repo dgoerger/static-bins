@@ -12,7 +12,7 @@
 all:
 	git clone https://github.com/jgm/pandoc.git pandoc-src && \
 	cd pandoc-src && \
-	git checkout 2.10 && \
+	git checkout 2.11 && \
 	patch pandoc.cabal ../disable_ghc_option_threaded.patch && \
 	export TMPDIR=/usr/local/cabal/build && \
 	cabal new-update && \
